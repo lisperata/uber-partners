@@ -16,9 +16,9 @@ jobs:
     - name: Install
       run: npm i
     - name: Build 
-      run: gulp styles fonts icons images scripts html
+      run: gulp styles
     - name: Bundle
-      run: mkdir ./out && mv dist out/uber-partners
+      run: mkdir ./out && mkdir out/uber-partners && cp -r css fonts images icons js ./out/uber-partners/ && cp index.html ./out/uber-partners/
       
     - name: Deploy
       uses: peaceiris/actions-gh-pages@v3
